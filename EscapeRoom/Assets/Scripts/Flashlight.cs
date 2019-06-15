@@ -7,7 +7,7 @@ public class Flashlight : Item
     [SerializeField]
     private bool hasBattery = false;
 
-    private bool enabled = false;
+    
 
     public Item Combine(Item other)
     {
@@ -31,19 +31,19 @@ public class Flashlight : Item
         if (hasBattery)
         {
             Debug.Log("Latarka swieci");
-            if (enabled)
+            if (active)
                 Destroy(PlayerController.mainPlayer.GetComponentInChildren<Light>().gameObject);
             else
             {
                 GameObject lightPrefab = Resources.Load("Prefabs/FlashlightPrefab") as GameObject;
                 Instantiate(lightPrefab, PlayerController.mainPlayer.transform);
             }
-            enabled = !enabled;
+            active = !active;
         }
         else
             Debug.Log("Brakuje bateri");
 
-        return null;
+        return active ? this : null;
     }
 
     // Start is called before the first frame update

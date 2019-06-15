@@ -23,12 +23,22 @@ abstract public class Item : ScriptableObject, IUsable
 
     public Sprite sprite { get => _sprite; protected set => _sprite = value; }
 
+    [SerializeField]
+    protected bool _combinable = false;
+
+    public bool combinable { get => _combinable; protected set => _combinable = value; }
+
+    [SerializeField]
+    protected bool _active = false;
+    public bool active { get => _active; protected set => _active = value; }
+
 
     //public abstract bool Use();
 
     public override string ToString()
     {
         return "ITEM: " + name;
+        
     }
 
     public void OnDestroy()

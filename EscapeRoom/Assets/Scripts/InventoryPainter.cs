@@ -33,15 +33,25 @@ public class InventoryPainter : MonoBehaviour
         itemCount = 0;
     }
 
-    public void ToggleItem(GameObject go)
+    public void HighlightItem(GameObject go, InventoryItemStatus status)
     {
         Image img = go.GetComponent<Image>();
-        if (img.color == Color.white)
+        switch (status)
         {
-            img.color = Color.yellow;
+            case InventoryItemStatus.None:
+                img.color = Color.white;
+                break;
+            case InventoryItemStatus.Selected:
+                img.color = Color.yellow;
+                break;
+            case InventoryItemStatus.InUse:
+                if (img.color == Color.white)
+                    img.color = Color.green;
+                else
+                    img.color = Color.white;
+                break;
         }
-        else
-            img.color = Color.white;
+
     }
 
     public void Paint( List<Item> inventory, Item selectedItem)
@@ -65,13 +75,16 @@ public class InventoryPainter : MonoBehaviour
             go.GetComponentInChildren<Text>().text = it.name;
             go.transform.Find("Thumbnail").gameObject.GetComponent<Image>().sprite = it.sprite;
 
+            if (it.active)
+                HighlightItem(go, InventoryItemStatus.InUse);
+
             if (selectedItem == it)
-                ToggleItem(go);
+                HighlightItem(go, InventoryItemStatus.Selected);
 
 
             go.GetComponent<Button>().onClick.AddListener(() => {
-                if(inventoryController.ItemClicked(it))
-                    ToggleItem(go);
+                InventoryItemStatus status = inventoryController.ItemClicked(it);
+                HighlightItem(go, status);
             });
 
             itemCount++;

@@ -9,20 +9,8 @@ public class Key : Item
 
     public int keyId { get => _keyId; private set => _keyId = value; }
 
-    //public override Item Use(Item other = null)
-    //{
-        
-    //}
-
-    // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        combinable = true;
     }
 }

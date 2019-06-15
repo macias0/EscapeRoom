@@ -2,9 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum InventoryItemStatus
+{
+    None,
+    Selected,
+    InUse
+};
+
+
 public class InventoryController : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+
+
     [SerializeField]
     private float pickUpDistance = 5.0f;
     private Inventory _inventory = new Inventory();
@@ -26,20 +36,31 @@ public class InventoryController : MonoBehaviour
         active = false;
     }
 
-    public bool ItemClicked(Item item)
+    //returns true if item should be toggled in the inventory, otherwise false
+    public InventoryItemStatus ItemClicked(Item item)
     {
 
         if (selectedItem == null )
         {
-            Debug.Log("Zaznaczam item: " + item);
-            selectedItem = item;
-            item.Use();
+            if (item.combinable)
+            {
+                Debug.Log("Zaznaczam item " + item);
+                selectedItem = item;
+            }
+            else
+            {
+                Item res = item.Use();
+                if (res == item)
+                    return InventoryItemStatus.InUse;
+                else if (res == null)
+                    return InventoryItemStatus.None;
+            }
         }
         else if (selectedItem == item)
         {
-            selectedItem.Use();
             selectedItem = null;
             Debug.Log("Odznaczam");
+            return InventoryItemStatus.None;
         }
         else
         {
@@ -56,7 +77,7 @@ public class InventoryController : MonoBehaviour
             else
             {
                 Debug.Log("Nie mozesz polaczyc tych przedmiotow");
-                return false;
+                return InventoryItemStatus.None;
                
             }
 
@@ -64,7 +85,7 @@ public class InventoryController : MonoBehaviour
             
         }
 
-        return true;
+        return InventoryItemStatus.Selected;
 
     }
 

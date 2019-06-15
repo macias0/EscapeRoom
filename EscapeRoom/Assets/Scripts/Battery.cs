@@ -7,16 +7,9 @@ public class Battery : Item
     public float level = 100.0f;
 
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
-        
+        combinable = true;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
