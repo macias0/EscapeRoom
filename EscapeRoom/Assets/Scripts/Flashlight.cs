@@ -32,11 +32,16 @@ public class Flashlight : Item
         {
             Debug.Log("Latarka swieci");
             if (active)
-                Destroy(PlayerController.mainPlayer.GetComponentInChildren<Light>().gameObject);
+            {
+                var fl = PlayerController.mainPlayer.GetComponentInChildren<Flashlight_PRO>();
+                //Debug.Log("Flashligh go: " + fl + "," + fl.gameObject);
+                Destroy(fl.gameObject);
+            }
             else
             {
-                GameObject lightPrefab = Resources.Load("Prefabs/FlashlightPrefab") as GameObject;
+                GameObject lightPrefab = Resources.Load("Prefabs/Flashlight") as GameObject;
                 Instantiate(lightPrefab, PlayerController.mainPlayer.transform);
+                PlayerController.mainPlayer.GetComponentInChildren<Flashlight_PRO>().Switch();
             }
             active = !active;
         }

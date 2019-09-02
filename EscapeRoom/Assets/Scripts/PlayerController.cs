@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     //singleton instance of player
     public static GameObject mainPlayer { get; private set; }
+
+    public bool freezed = false;
     
 
     void Start()
@@ -33,17 +35,22 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown("i"))
+        if (Input.GetKeyDown("i") && !freezed)
         {
             inventoryController.ToggleInventory();
         }
 
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("e") && !inventoryController.active)
         {
             inventoryController.Interaction();
         }
 
-        if (!inventoryController.active)
+        if (Input.GetMouseButtonDown(0) && !inventoryController.active && !freezed)
+        {
+            inventoryController.Fire();
+        }
+
+        if (!inventoryController.active && !freezed)
         {
             yaw += speedH * Input.GetAxis("Mouse X");
             pitch -= speedV * Input.GetAxis("Mouse Y");

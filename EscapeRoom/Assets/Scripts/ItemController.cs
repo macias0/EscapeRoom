@@ -14,7 +14,8 @@ public class ItemController : MonoBehaviour, IPickable
         Note,
         Battery,
         Flashlight,
-        Key
+        Key,
+        Crowbar
     };
 
     [SerializeField]
@@ -25,7 +26,8 @@ public class ItemController : MonoBehaviour, IPickable
         { ItemType.Note, typeof(Note) },
         { ItemType.Battery, typeof(Battery)},
         { ItemType.Flashlight, typeof(Flashlight)},
-        { ItemType.Key, typeof(Key)}
+        { ItemType.Key, typeof(Key)},
+        { ItemType.Crowbar, typeof(Crowbar)}
     };
 
     [SerializeField]
@@ -45,6 +47,7 @@ public class ItemController : MonoBehaviour, IPickable
 
     public Item PickUp()
     {
+        Destroy(gameObject);
         return item;
     }
 }

@@ -27,13 +27,20 @@ public class InventoryController : MonoBehaviour
 
     public Item selectedItem { get => _selectedItem; private set => _selectedItem = value; }
 
+    public Item _usedItem = null;
+
+    public Item usedItem { get => _usedItem; private set => _usedItem = value; }
+
     public bool active { get; private set; }
+
+    private InventoryPainter inventoryPainter = null;
 
 
     void Start()
     {
         Cursor.visible = false;
         active = false;
+        inventoryPainter = inventoryCanvas.GetComponentInChildren<InventoryPainter>();
     }
 
     //returns true if item should be toggled in the inventory, otherwise false
@@ -49,11 +56,28 @@ public class InventoryController : MonoBehaviour
             }
             else
             {
+
                 Item res = item.Use();
+
+                if (usedItem && usedItem != item)
+                {
+                    usedItem.Use(); //disable current item
+                    inventoryPainter.Paint(inventory.inventory, null);
+
+                }
+
                 if (res == item)
+                {
+                    Debug.Log("ITEM IN USE");
+                    usedItem = item;
                     return InventoryItemStatus.InUse;
+                }
                 else if (res == null)
+                {
+                    Debug.Log("ITEM USE NONE");
+                    usedItem = null;
                     return InventoryItemStatus.None;
+                }
             }
         }
         else if (selectedItem == item)
@@ -72,7 +96,7 @@ public class InventoryController : MonoBehaviour
                 inventory.RemoveItem(item);
                 inventory.RemoveItem(selectedItem);
                 inventory.AddItem(craftedItem);
-                inventoryCanvas.GetComponentInChildren<InventoryPainter>().Paint(inventory.inventory, selectedItem);
+                inventoryPainter.Paint(inventory.inventory, selectedItem);
             }
             else
             {
@@ -98,9 +122,9 @@ public class InventoryController : MonoBehaviour
             Cursor.visible = inventoryCanvas.activeSelf;
 
             if (active)
-                inventoryCanvas.GetComponentInChildren<InventoryPainter>().Paint(inventory.inventory, selectedItem);
+                inventoryPainter.Paint(inventory.inventory, selectedItem);
             else
-                inventoryCanvas.GetComponentInChildren<InventoryPainter>().Clear();
+                inventoryPainter.Clear();
 
     }
 
@@ -120,7 +144,7 @@ public class InventoryController : MonoBehaviour
 
                     inventory.AddItem(pickable.PickUp());
 
-                    Destroy(go);
+                    //Destroy(go);
                 }
                 else
                 {
@@ -139,6 +163,15 @@ public class InventoryController : MonoBehaviour
 
 
             }
+        }
+    }
+
+    public void Fire()
+    {
+        IWeapon weapon = (IWeapon)usedItem;
+        if(weapon != null)
+        {
+            weapon.Fire();
         }
     }
 
