@@ -14,7 +14,13 @@ interface IUsable
     Item Use(Item other = null);
 }
 
-interface IWeapon
+interface IFireable
 {
     void Fire();
+}
+
+
+interface IBreakable
+{
+    void Hit(Item weapon, RaycastHit hit);
 }

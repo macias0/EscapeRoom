@@ -9,7 +9,7 @@ public class ItemController : MonoBehaviour, IPickable
 {
 
     
-    enum ItemType {
+    enum EItemType {
         None,
         Note,
         Battery,
@@ -19,15 +19,15 @@ public class ItemController : MonoBehaviour, IPickable
     };
 
     [SerializeField]
-    private ItemType itemType = ItemType.None;
+    private EItemType itemType = EItemType.None;
 
-    Dictionary<ItemType, Type> itemTypeToTypeDictionary = new Dictionary<ItemType, Type> {
+    Dictionary<EItemType, Type> itemTypeToTypeDictionary = new Dictionary<EItemType, Type> {
 
-        { ItemType.Note, typeof(Note) },
-        { ItemType.Battery, typeof(Battery)},
-        { ItemType.Flashlight, typeof(Flashlight)},
-        { ItemType.Key, typeof(Key)},
-        { ItemType.Crowbar, typeof(Crowbar)}
+        { EItemType.Note, typeof(Note) },
+        { EItemType.Battery, typeof(Battery)},
+        { EItemType.Flashlight, typeof(Flashlight)},
+        { EItemType.Key, typeof(Key)},
+        { EItemType.Crowbar, typeof(Crowbar)}
     };
 
     [SerializeField]
@@ -38,7 +38,7 @@ public class ItemController : MonoBehaviour, IPickable
     private void OnValidate()
     {
         //item = (Item)Activator.CreateInstance(dict[itemType]);
-        if (itemType != ItemType.None && (item == null || (item.GetType() != itemTypeToTypeDictionary[itemType])))
+        if (itemType != EItemType.None && (item == null || (item.GetType() != itemTypeToTypeDictionary[itemType])))
         {
             Debug.Log("Tworze nowy item");
             item = (Item)ScriptableObject.CreateInstance(itemTypeToTypeDictionary[itemType]);

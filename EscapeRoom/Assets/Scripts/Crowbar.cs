@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crowbar : Item, IWeapon
+public class Crowbar : Weapon
 {
 
     private GameObject model = null;
@@ -28,8 +28,8 @@ public class Crowbar : Item, IWeapon
             }
             else
             {
-                GameObject lightPrefab = Resources.Load("Prefabs/Crowbar") as GameObject;
-                model = Instantiate(lightPrefab, PlayerController.mainPlayer.transform);
+                GameObject crowbarPrefab = Resources.Load("Prefabs/Crowbar") as GameObject;
+                model = Instantiate(crowbarPrefab, PlayerController.mainPlayer.transform);
             }
             active = !active;
         }
@@ -39,10 +39,32 @@ public class Crowbar : Item, IWeapon
     }
 
 
-    public void Fire()
+    public override void Fire()
     {
         Debug.Log("Jeb z łomika");
-        //throw new System.NotImplementedException();
+        model.GetComponent<Animator>().SetTrigger("Attack");
+
+        AudioSource aSrc = model.GetComponent<AudioSource>();
+        if(!aSrc.isPlaying)
+            aSrc.Play();
+
+
+        //check if you hit something
+        RaycastHit hit;
+
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0.0f));
+        if(Physics.Raycast(ray, out hit, range ))
+        {
+            GameObject go = hit.collider.gameObject;
+            if(go && go.tag == "Interactive" )
+            {
+                IBreakable target = go.GetComponent(typeof(IBreakable)) as IBreakable;
+                if(target != null)
+                {
+                    target.Hit(this, hit);
+                }
+            }
+        }
     }
 
 

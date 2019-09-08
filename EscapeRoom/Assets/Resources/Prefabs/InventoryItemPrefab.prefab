@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 4128227235614849655}
   - component: {fileID: 4128227235614849652}
   - component: {fileID: 4128227235614849653}
+  - component: {fileID: -1074992628596522737}
   m_Layer: 5
   m_Name: InventoryItemPrefab
   m_TagString: Untagged
@@ -286,3 +287,16 @@ MonoBehaviour:
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &-1074992628596522737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4128227235614849611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []

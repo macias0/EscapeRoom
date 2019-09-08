@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum InventoryItemStatus
+public enum EInventoryItemStatus
 {
     None,
     Selected,
@@ -44,7 +44,7 @@ public class InventoryController : MonoBehaviour
     }
 
     //returns true if item should be toggled in the inventory, otherwise false
-    public InventoryItemStatus ItemClicked(Item item)
+    public EInventoryItemStatus ItemClicked(Item item)
     {
 
         if (selectedItem == null )
@@ -58,11 +58,15 @@ public class InventoryController : MonoBehaviour
             {
 
                 Item res = item.Use();
+                Debug.Log("RES: " + res);
 
-                if (usedItem && usedItem != item)
+                if (usedItem && usedItem != item && res != null)
                 {
+                    
                     usedItem.Use(); //disable current item
+
                     inventoryPainter.Paint(inventory.inventory, null);
+                   
 
                 }
 
@@ -70,13 +74,14 @@ public class InventoryController : MonoBehaviour
                 {
                     Debug.Log("ITEM IN USE");
                     usedItem = item;
-                    return InventoryItemStatus.InUse;
+                    return EInventoryItemStatus.InUse;
                 }
                 else if (res == null)
                 {
                     Debug.Log("ITEM USE NONE");
-                    usedItem = null;
-                    return InventoryItemStatus.None;
+                    if(item == usedItem)
+                        usedItem = null;
+                    return EInventoryItemStatus.None;
                 }
             }
         }
@@ -84,7 +89,7 @@ public class InventoryController : MonoBehaviour
         {
             selectedItem = null;
             Debug.Log("Odznaczam");
-            return InventoryItemStatus.None;
+            return EInventoryItemStatus.None;
         }
         else
         {
@@ -100,8 +105,8 @@ public class InventoryController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Nie mozesz polaczyc tych przedmiotow");
-                return InventoryItemStatus.None;
+                Debug.Log("Nie mozesz polaczyc tych przedmiotow, item active: " + item + item.active);
+                return item.active ? EInventoryItemStatus.InUse :  EInventoryItemStatus.None;
                
             }
 
@@ -109,7 +114,7 @@ public class InventoryController : MonoBehaviour
             
         }
 
-        return InventoryItemStatus.Selected;
+        return EInventoryItemStatus.Selected;
 
     }
 
@@ -131,13 +136,14 @@ public class InventoryController : MonoBehaviour
     public void Interaction()
     {
         RaycastHit hit;
-        Debug.DrawRay(transform.position, transform.forward * pickUpDistance, Color.red);
-        if (Physics.Raycast(transform.position, transform.forward, out hit, pickUpDistance))
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0.0f));
+        //Debug.DrawRay(transform.position, transform.forward * pickUpDistance, Color.red);
+        if (Physics.Raycast(ray, out hit, pickUpDistance))
         {
             GameObject go = hit.collider.gameObject;
             if (go.tag == "Interactive")
             {
-                IPickable pickable = (IPickable)go.GetComponent(typeof(IPickable));
+                IPickable pickable = go.GetComponent(typeof(IPickable)) as IPickable;
                 if (pickable != null)
                 {
                     Debug.Log("Podnosze item");
@@ -148,7 +154,12 @@ public class InventoryController : MonoBehaviour
                 }
                 else
                 {
-                    IUsable usable = (IUsable)go.GetComponent(typeof(IUsable));
+                    
+                    IUsable usable = go.GetComponent(typeof(IUsable)) as IUsable;
+                    if (usable == null)
+                        usable = go.GetComponentInParent(typeof(IUsable)) as IUsable;
+
+                    Debug.Log("Szukam IUSABLe w obiekcie: " + go + "i parencie: " + usable);
                     if (usable != null)
                     {
                         Item ret = usable.Use(selectedItem);
@@ -168,7 +179,7 @@ public class InventoryController : MonoBehaviour
 
     public void Fire()
     {
-        IWeapon weapon = (IWeapon)usedItem;
+        IFireable weapon = usedItem as IFireable;
         if(weapon != null)
         {
             weapon.Fire();

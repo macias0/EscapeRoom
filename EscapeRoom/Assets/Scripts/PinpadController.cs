@@ -9,7 +9,7 @@ using UnityEngine.UI;
 //public class PinAcceptedEvent : UnityEvent<string>
 //{
 //}
-
+[RequireComponent(typeof(AudioSource))]
 public class PinpadController : MonoBehaviour, IUsable
 {
     [SerializeField]
@@ -23,13 +23,37 @@ public class PinpadController : MonoBehaviour, IUsable
     private UnityEvent onPinAccepted = new UnityEvent();
 
     [SerializeField]
+    private UnityEvent onPinError = new UnityEvent();
+
+
+    [SerializeField]
     private PlayerController playerController = null;
 
     [SerializeField]
     private string pin = "";
 
+
+    [SerializeField]
+    private AudioClip acceptedSound = null;
+
+    [SerializeField]
+    private AudioClip errorSound = null;
+
+    [SerializeField]
+    private AudioClip clickSound = null;
+
+    private AudioSource audioSource = null;
+
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void KeyPressed(string key)
     {
+        audioSource.clip = clickSound;
+
         GameObject myEventSystem = GameObject.Find("EventSystem");
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
         if (key == "<") //back
@@ -43,6 +67,13 @@ public class PinpadController : MonoBehaviour, IUsable
             {
                 Debug.Log("PIN PRAWIDLOWY");
                 onPinAccepted.Invoke();
+                audioSource.clip = acceptedSound;
+                GetComponent<Collider>().enabled = false;
+            }
+            else
+            {
+                onPinError.Invoke();
+                audioSource.clip = errorSound;
             }
         }
         else
@@ -50,6 +81,10 @@ public class PinpadController : MonoBehaviour, IUsable
             if(display.text.Length < maxCharacters)
                 display.text += key;
         }
+
+
+        audioSource.Play();
+
     }
 
     public Item Use(Item other = null)
