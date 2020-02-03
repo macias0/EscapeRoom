@@ -11,7 +11,7 @@ abstract public class Item : ScriptableObject, IUsable
     [SerializeField]
     private string _name = "";
     
-    public new string name { get => _name;  }
+    public new string name { get => _name; protected set => _name = value; }
 
     [SerializeField]
     private string _description = "";

@@ -15,7 +15,8 @@ public class ItemController : MonoBehaviour, IPickable
         Battery,
         Flashlight,
         Key,
-        Crowbar
+        Crowbar,
+        Chemical
     };
 
     [SerializeField]
@@ -27,7 +28,8 @@ public class ItemController : MonoBehaviour, IPickable
         { EItemType.Battery, typeof(Battery)},
         { EItemType.Flashlight, typeof(Flashlight)},
         { EItemType.Key, typeof(Key)},
-        { EItemType.Crowbar, typeof(Crowbar)}
+        { EItemType.Crowbar, typeof(Crowbar)},
+        { EItemType.Chemical, typeof(Chemical) }
     };
 
     [SerializeField]
