@@ -16,7 +16,11 @@ public class ItemController : MonoBehaviour, IPickable
         Flashlight,
         Key,
         Crowbar,
-        Chemical
+        Chemical,
+        Hammer,
+        Pilers,
+        Bar,
+        Sword
     };
 
     [SerializeField]
@@ -29,7 +33,11 @@ public class ItemController : MonoBehaviour, IPickable
         { EItemType.Flashlight, typeof(Flashlight)},
         { EItemType.Key, typeof(Key)},
         { EItemType.Crowbar, typeof(Crowbar)},
-        { EItemType.Chemical, typeof(Chemical) }
+        { EItemType.Chemical, typeof(Chemical) },
+        { EItemType.Hammer, typeof(Hammer) },
+        { EItemType.Pilers, typeof(Pilers) },
+        { EItemType.Bar, typeof(Bar) },
+        { EItemType.Sword, typeof(Sword) }
     };
 
     [SerializeField]

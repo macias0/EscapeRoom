@@ -2,13 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crowbar : Weapon
+public class Sword : Weapon
 {
+    [SerializeField]
+    bool _sharp = false;
 
+    public bool sharp { get => _sharp; set => _sharp = value; }
 
-    Crowbar()
+    Sword()
     {
-        modelPath = "Prefabs/Crowbar";
+        modelPath = "Prefabs/Sword";
+    }
+
+
+    public override Item Use(Item other)
+    {
+        if (!sharp)
+            return null;
+        else
+            return base.Use(other);
     }
 
 
@@ -28,13 +40,11 @@ public class Crowbar : Weapon
                     target.Hit(this, hit);
                 }
             }
-            
+
         }
         return rh;
 
 
     }
-
-
 
 }

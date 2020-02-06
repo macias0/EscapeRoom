@@ -6,7 +6,7 @@ using UnityEditor;
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(AudioSource))]
-public class BreakableMesh : MonoBehaviour, IBreakable
+public class BreakableMesh : MonoBehaviour, IHitable
 {
     private Mesh mesh;
     private new AudioSource audio;

@@ -16,11 +16,11 @@ interface IUsable
 
 interface IFireable
 {
-    void Fire();
+    RaycastHit? Fire();
 }
 
 
-interface IBreakable
+interface IHitable
 {
     void Hit(Item weapon, RaycastHit hit);
 }

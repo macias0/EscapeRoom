@@ -25,7 +25,7 @@ public class InventoryController : MonoBehaviour
 
     private Item _selectedItem = null;
 
-    public Item selectedItem { get => _selectedItem; private set => _selectedItem = value; }
+    public Item selectedItem { get => _selectedItem; set => _selectedItem = value; }
 
     public Item _usedItem = null;
 

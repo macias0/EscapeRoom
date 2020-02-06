@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crowbar : Weapon
+public class Hammer : Weapon
 {
 
-
-    Crowbar()
+    Hammer()
     {
-        modelPath = "Prefabs/Crowbar";
+        modelPath = "Prefabs/Hammer";
     }
-
 
     public override RaycastHit? Fire()
     {
-
         RaycastHit? rh = base.Fire();
         if (rh != null)
         {
@@ -22,19 +19,17 @@ public class Crowbar : Weapon
             GameObject go = hit.collider.gameObject;
             if (go && go.tag == "Interactive")
             {
-                IHitable target = go.GetComponent(typeof(IHitable)) as IHitable;
+                IUsable target = go.GetComponent(typeof(IUsable)) as IUsable;
                 if (target != null)
                 {
-                    target.Hit(this, hit);
+                    target.Use(this);
                 }
             }
-            
+
         }
         return rh;
 
 
     }
-
-
-
 }
+

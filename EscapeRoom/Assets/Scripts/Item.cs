@@ -11,12 +11,12 @@ abstract public class Item : ScriptableObject, IUsable
     [SerializeField]
     private string _name = "";
     
-    public new string name { get => _name; protected set => _name = value; }
+    public new string name { get => _name; set => _name = value; }
 
     [SerializeField]
     private string _description = "";
 
-    public string description { get => _description; protected set => _description = value; }
+    public string description { get => _description; set => _description = value; }
 
     [SerializeField]
     private Sprite _sprite = null;
@@ -26,7 +26,7 @@ abstract public class Item : ScriptableObject, IUsable
     [SerializeField]
     protected bool _combinable = false;
 
-    public bool combinable { get => _combinable; protected set => _combinable = value; }
+    public bool combinable { get => _combinable; set => _combinable = value; }
 
     [SerializeField]
     protected bool _active = false;
