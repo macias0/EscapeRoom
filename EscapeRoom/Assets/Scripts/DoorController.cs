@@ -26,7 +26,9 @@ public class DoorController : MonoBehaviour, IUsable
     private int keyId = 0;
 
     [SerializeField]
-    private bool locked = true;
+    private bool _locked = true;
+
+    public bool locked { get => _locked; set => _locked = value; }
 
     [SerializeField]
     private Vector3 startRot;
