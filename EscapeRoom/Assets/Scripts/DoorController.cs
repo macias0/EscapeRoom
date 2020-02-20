@@ -7,6 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class DoorController : MonoBehaviour, IUsable
 {
+
+
     private new AudioSource audio;
 
     void Start()
@@ -47,6 +49,20 @@ public class DoorController : MonoBehaviour, IUsable
 
     private bool open = false;
 
+
+    //method alias - used in UnityEvent, 
+    //because it doesn't see method with return type other that void
+    public void Open()
+    {
+        state = EDoorState.Opening;
+    }
+
+    public void Close()
+    {
+        state = EDoorState.Closing;
+    }
+
+
     public Item Use(Item other = null)
     {
         if(other is Key)
@@ -64,9 +80,9 @@ public class DoorController : MonoBehaviour, IUsable
         if (!locked && state == EDoorState.Idle)
         {
             Debug.Log("OTwieram drzwi: open: "+ open);
-            if (open) state = EDoorState.Closing;
-            else state = EDoorState.Opening;
-                
+            if (open) Close();
+            else Open();
+
             //Vector3 rot = transform.localEulerAngles;
             //rot.y = open ? 0 : 90;
             //transform.localEulerAngles = rot;

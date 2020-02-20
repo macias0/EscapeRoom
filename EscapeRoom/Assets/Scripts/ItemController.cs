@@ -20,7 +20,8 @@ public class ItemController : MonoBehaviour, IPickable
         Hammer,
         Pilers,
         Bar,
-        Sword
+        Sword,
+        LogicGate
     };
 
     [SerializeField]
@@ -37,7 +38,8 @@ public class ItemController : MonoBehaviour, IPickable
         { EItemType.Hammer, typeof(Hammer) },
         { EItemType.Pilers, typeof(Pilers) },
         { EItemType.Bar, typeof(Bar) },
-        { EItemType.Sword, typeof(Sword) }
+        { EItemType.Sword, typeof(Sword) },
+        { EItemType.LogicGate, typeof(LogicGate) }
     };
 
     [SerializeField]
