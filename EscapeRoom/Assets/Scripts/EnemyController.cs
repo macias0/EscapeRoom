@@ -22,17 +22,20 @@ public class EnemyController : MonoBehaviour, IHitable
 
     public void Hit(Item weapon, RaycastHit hit)
     {
-        if(weapon is Sword)
+        if (!audio.isPlaying)
         {
-            audio.clip = deathClip;
-            float clipLength = audio.clip.length;
-            StartCoroutine(DestroyEnemy(clipLength));
+            if (weapon is Sword)
+            {
+                audio.clip = deathClip;
+                float clipLength = audio.clip.length;
+                StartCoroutine(DestroyEnemy(clipLength));
+            }
+            else
+            {
+                audio.clip = laughClip;
+            }
+            audio.Play();
         }
-        else
-        {
-            audio.clip = laughClip;
-        }
-        audio.Play();
     }
 
     private IEnumerator DestroyEnemy(float clipLength)

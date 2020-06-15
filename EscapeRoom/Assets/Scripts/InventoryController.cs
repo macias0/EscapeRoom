@@ -35,12 +35,15 @@ public class InventoryController : MonoBehaviour
 
     private InventoryPainter inventoryPainter = null;
 
+    private AudioSource audioSource = null;
+
 
     void Start()
     {
         Cursor.visible = false;
         active = false;
         inventoryPainter = inventoryCanvas.GetComponentInChildren<InventoryPainter>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     //returns true if item should be toggled in the inventory, otherwise false
@@ -102,6 +105,7 @@ public class InventoryController : MonoBehaviour
                 inventory.RemoveItem(selectedItem);
                 inventory.AddItem(craftedItem);
                 inventoryPainter.Paint(inventory.inventory, selectedItem);
+                audioSource.Play();
             }
             else
             {

@@ -67,10 +67,10 @@ public class PlayerController : MonoBehaviour
                 moveDirection *= speed;
 
 
-                if (Input.GetButton("Jump"))
-                {
-                    moveDirection.y = jumpSpeed;
-                }
+                //if (Input.GetButton("Jump"))
+                //{
+                //    moveDirection.y = jumpSpeed;
+                //}
             }
 
             // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below

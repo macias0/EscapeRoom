@@ -29,7 +29,7 @@ public class AnvilController : MonoBehaviour, IUsable
             return other;
             
         }
-        else if(other is Bar)
+        else if(other is Bar && ((Bar)other).hot)
         {
             bar.SetActive(true);
             return other;

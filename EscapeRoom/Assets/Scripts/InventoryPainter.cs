@@ -10,8 +10,8 @@ public class InventoryPainter : MonoBehaviour
     [SerializeField]
     private int itemsInRow = 4;
 
-    [SerializeField]
-    private int itemsInColumn = 4;
+    //[SerializeField]
+    //private int itemsInColumn = 4;
 
     [SerializeField]
     private float margins = 5.0f;
@@ -75,7 +75,7 @@ public class InventoryPainter : MonoBehaviour
 
             float width = rt.sizeDelta.x;
             float height = rt.sizeDelta.y;
-            rt.anchoredPosition = new Vector3((itemCount % itemsInRow) * width + margins, -((int)(itemCount / itemsInColumn) * height + margins), 1.0f);
+            rt.anchoredPosition = new Vector3((itemCount % itemsInRow) * width + margins, -((int)(itemCount / itemsInRow) * height + margins), 1.0f);
 
             //fill with Item data
 

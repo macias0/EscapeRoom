@@ -40,6 +40,13 @@ public class LogicGateController : MonoBehaviour, IUsable
     [SerializeField]
     private UnityEvent onOutputFalse;
 
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void OnValidate()
     {
         if (fixedGate && gate == null)
@@ -58,6 +65,8 @@ public class LogicGateController : MonoBehaviour, IUsable
 
             gateModel = GameObject.Instantiate(gate.prefab, gameObject.transform);
 
+            if (audioSource != null)
+                audioSource.Play();
 
             //update inputs
             UpdateInput(input[0], 0);
