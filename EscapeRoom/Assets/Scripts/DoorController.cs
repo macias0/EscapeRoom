@@ -9,13 +9,6 @@ public class DoorController : MonoBehaviour, IUsable
 {
 
 
-    private new AudioSource audio;
-
-    void Start()
-    {
-        audio = GetComponent<AudioSource>();
-    }
-
     enum EDoorState
     {
         Idle,
@@ -49,17 +42,41 @@ public class DoorController : MonoBehaviour, IUsable
 
     private bool open = false;
 
+    [SerializeField]
+    private AudioClip unlockClip;
+
+    [SerializeField]
+    private AudioClip openCloseClip;
+
+    private new AudioSource audio;
+
+
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
 
     //method alias - used in UnityEvent, 
     //because it doesn't see method with return type other that void
     public void Open()
     {
         state = EDoorState.Opening;
+        if (openCloseClip != null)
+        {
+            audio.clip = openCloseClip;
+            audio.Play();
+        }
     }
 
     public void Close()
     {
         state = EDoorState.Closing;
+        if (openCloseClip != null)
+        {
+            audio.clip = openCloseClip;
+            audio.Play();
+        }
     }
 
 
@@ -70,7 +87,12 @@ public class DoorController : MonoBehaviour, IUsable
             Debug.Log("Mamy klucz");
             if( ((Key)other).keyId == keyId )
             {
-                audio.Play();
+                if(unlockClip != null)
+                {
+                    audio.clip = unlockClip;
+                    audio.Play();
+                }
+
                 Debug.Log("Odblokowalem dzrwi");
                 locked = false;
                 return other;

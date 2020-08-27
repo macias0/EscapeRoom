@@ -42,6 +42,7 @@ public class LogicGateController : MonoBehaviour, IUsable
 
     private AudioSource audioSource;
 
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
