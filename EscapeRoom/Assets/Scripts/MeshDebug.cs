@@ -53,10 +53,10 @@ public class MeshDebug : MonoBehaviour
             i++;
         }
 
-        foreach(KeyValuePair<Vector3, string> entry in labels)
-        {
-            Handles.Label(entry.Key, entry.Value);
-        }
+        //foreach(KeyValuePair<Vector3, string> entry in labels)
+        //{
+        //    Handles.Label(entry.Key, entry.Value);
+        //}
         //Debug.Log("KONIEC");
     }
 

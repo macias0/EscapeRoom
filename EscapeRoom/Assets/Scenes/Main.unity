@@ -3018,7 +3018,7 @@ PrefabInstance:
     - target: {fileID: 2087698929694440031, guid: b75463d6ab3049246a79bc0f7c92e7b0,
         type: 3}
       propertyPath: pin
-      value: 1234
+      value: 2020
       objectReference: {fileID: 0}
     - target: {fileID: 2087698929694440031, guid: b75463d6ab3049246a79bc0f7c92e7b0,
         type: 3}
@@ -4743,7 +4743,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: '#3.                                 - .... .-. . .'
+  m_text: '#3.                                     - .... .-. . .'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4812,9 +4812,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 315015466}
-    characterCount: 50
+    characterCount: 54
     spriteCount: 0
-    spaceCount: 37
+    spaceCount: 41
     wordCount: 3
     linkCount: 0
     lineCount: 2
@@ -12215,7 +12215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -26.07}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10.2, y: -5}
+  m_AnchoredPosition: {x: 9.2, y: -4.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &721596138
@@ -12238,7 +12238,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 1
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69f6c82c53b6e10439847c71b90994f1, type: 2}
   m_sharedMaterial: {fileID: -129647890561636505, guid: 69f6c82c53b6e10439847c71b90994f1,
@@ -14774,7 +14774,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 4
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69f6c82c53b6e10439847c71b90994f1, type: 2}
   m_sharedMaterial: {fileID: -129647890561636505, guid: 69f6c82c53b6e10439847c71b90994f1,
@@ -16920,11 +16920,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Karteczka
-  _description: "R\xF3wnanie kwadratowe"
+  _description: "Zadanie z tre\u015Bci\u0105"
   _sprite: {fileID: 21300000, guid: 27d54334dab15354a8c2a39ad7facd13, type: 3}
   _combinable: 0
   _active: 0
-  _content: '#1. x^2=8x-16'
+  _content: "1#. Wycieczka wyruszy\u0142a z miasta A o godzinie 11:15 i dotar\u0142a
+    do miasta B o godzinie 15:45. Odleg\u0142o\u015B\u0107\a pomi\x19\u0119dzy miastami
+    wynosi 18 km. Oblicz \u015Br pr\u0119dko\u015B\u0107 wycieczki."
   text: {fileID: 4377487306554426129}
 --- !u!1001 &965213713
 PrefabInstance:
@@ -18980,7 +18982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73d42dc0683d654dbcef0adae6af16e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Turbo latarka
+  _name: Latarka
   _description: Brak baterii
   _sprite: {fileID: 21300000, guid: 1bf2cb4e72d47e14889684fe1575109b, type: 3}
   _combinable: 0
@@ -21391,7 +21393,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 2
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69f6c82c53b6e10439847c71b90994f1, type: 2}
   m_sharedMaterial: {fileID: -129647890561636505, guid: 69f6c82c53b6e10439847c71b90994f1,
@@ -23319,7 +23321,7 @@ MonoBehaviour:
   _sprite: {fileID: 21300000, guid: 27d54334dab15354a8c2a39ad7facd13, type: 3}
   _combinable: 0
   _active: 0
-  _content: '#3.                                 - .... .-. . .'
+  _content: '#3.                                     - .... .-. . .'
   text: {fileID: 315015466}
 --- !u!1001 &1389401818
 PrefabInstance:
@@ -24903,6 +24905,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1479562580}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1482683916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1482683917}
+  - component: {fileID: 1482683919}
+  - component: {fileID: 1482683918}
+  m_Layer: 0
+  m_Name: TMP SubMeshUI [LiberationSans SDF Material + LiberationSans SDF Atlas]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1482683917
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482683916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2200175050857130140}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1482683918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482683916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_spriteAsset: {fileID: 0}
+  m_material: {fileID: 0}
+  m_sharedMaterial: {fileID: 0}
+  m_isDefaultMaterial: 0
+  m_padding: 1.25
+  m_canvasRenderer: {fileID: 1482683919}
+  m_TextComponent: {fileID: 4377487306554426129}
+  m_materialReferenceIndex: 1
+--- !u!222 &1482683919
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482683916}
+  m_CullTransparentMesh: 0
 --- !u!1 &1494679014
 GameObject:
   m_ObjectHideFlags: 0
@@ -25424,7 +25500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Bateria
-  _description: Do latarki
+  _description: Pasuje do latarki
   _sprite: {fileID: 21300000, guid: 7f6c660d4e1196e4aa967dddd2d76968, type: 3}
   _combinable: 1
   _active: 0
@@ -29095,7 +29171,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 3
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69f6c82c53b6e10439847c71b90994f1, type: 2}
   m_sharedMaterial: {fileID: -129647890561636505, guid: 69f6c82c53b6e10439847c71b90994f1,
@@ -31342,7 +31418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: "\u0141omik"
-  _description: zajebisty
+  _description: "Mo\u017Ce da si\u0119 nim co\u015B zniszczy\u0107?"
   _sprite: {fileID: 21300000, guid: 8eb69c415bd06454b876b84919f0b038, type: 3}
   _combinable: 0
   _active: 0
@@ -36002,7 +36078,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1482683917}
   m_Father: {fileID: 3368693654448429011}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -36236,7 +36313,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: '#1. x^2=8x-16'
+  m_text: "1#. Wycieczka wyruszy\u0142a z miasta A o godzinie 11:15 i dotar\u0142a
+    do miasta B o godzinie 15:45. Odleg\u0142o\u015B\u0107\a pomi\x19\u0119dzy miastami
+    wynosi 18 km. Oblicz \u015Br pr\u0119dko\u015B\u0107 wycieczki."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -36264,8 +36343,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 53.09
-  m_fontSizeBase: 53.09
+  m_fontSize: 43.09
+  m_fontSizeBase: 43.09
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -36305,21 +36384,21 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 4377487306554426129}
-    characterCount: 13
+    characterCount: 165
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 4
+    spaceCount: 26
+    wordCount: 30
     linkCount: 0
-    lineCount: 1
+    lineCount: 7
     pageCount: 1
-    materialCount: 1
+    materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1482683918}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

@@ -27,6 +27,7 @@ public class EndGameController : MonoBehaviour, IUsable
         yield return new WaitForSeconds(seconds);
 
         //load main menu scene
+        Cursor.visible = true;
         SceneManager.LoadScene(0);
     }
 
