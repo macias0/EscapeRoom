@@ -26,6 +26,7 @@ public class BreakableMesh : MonoBehaviour, IHitable
 
     public void Hit(Item weapon, RaycastHit hit)
     {
+        Debug.Log("TriangleIndex: " + hit.triangleIndex);
         DestroyCuboid(hit.triangleIndex);
     }
 
@@ -69,19 +70,6 @@ public class BreakableMesh : MonoBehaviour, IHitable
     }
 
 
-    //void OnDrawGizmos()
-    //{
-    //    if(indexesToDraw != null && indexesToDraw.Count > 0)
-    //    {
-            
-    //        foreach (int idx in indexesToDraw)
-    //        {
-    //            Vector3 newPos = gameObject.transform.TransformPoint(mesh.vertices[idx]);
-    //            Handles.Label(newPos, idx.ToString());
-    //        }
-    //    }
-
-    //}
 
     private List<int> indexesToDraw = null;
 
@@ -90,7 +78,7 @@ public class BreakableMesh : MonoBehaviour, IHitable
     {
         int neighbourIndex = FindNeighbour(triangleIndex);
 
-        Debug.Log("Bazowy kwadrat: " + triangleIndex + "," + neighbourIndex);
+        //Debug.Log("Bazowy kwadrat: " + triangleIndex + "," + neighbourIndex);
 
         DestroyTriangles(FindCuboidIndexes(triangleIndex, neighbourIndex));
 
@@ -109,16 +97,16 @@ public class BreakableMesh : MonoBehaviour, IHitable
         //get all points to discard diagonal and find out which points are corners
         List<int> corners = GetVertexIndexes(result);
 
-        foreach (var x in corners)
-        {
-            Debug.Log("CORNERS: " + x);
-        }
+        //foreach (var x in corners)
+        //{
+        //    Debug.Log("CORNERS: " + x);
+        //}
 
         corners = corners.Distinct().ToList();
 
         //indexesToDraw = corners;
 
-        Debug.Log("Szukam sasiednich scian dla indexow: " + corners[0] + "," + corners[1] + "," + corners[2] + "," + corners[3]);
+        //Debug.Log("Szukam sasiednich scian dla indexow: " + corners[0] + "," + corners[1] + "," + corners[2] + "," + corners[3]);
 
         int[] mergedTriangles = MergeMesh(mesh.triangles, mesh.vertices, corners);
 
@@ -141,7 +129,7 @@ public class BreakableMesh : MonoBehaviour, IHitable
         AddCornerNeighbour(corners[1], corners[3], new List<int> { index1, index2 }, ref result, mergedTriangles);
 
 
-        Debug.Log("RESULT COUNT: " + result.Count);
+        //Debug.Log("RESULT COUNT: " + result.Count);
 
 
         //FIND TOP WALL
@@ -156,7 +144,7 @@ public class BreakableMesh : MonoBehaviour, IHitable
 
     private List<int> GetVertexIndexes(List<int> triangleIndexes, int [] triangles = null)
     {
-        Debug.Log("GETVERTEXINDEXES COUNT: " + triangleIndexes.Count);
+        //Debug.Log("GETVERTEXINDEXES COUNT: " + triangleIndexes.Count);
         if (triangles == null)
             triangles = mesh.triangles;
         List<int> result = new List<int>();
@@ -173,12 +161,12 @@ public class BreakableMesh : MonoBehaviour, IHitable
     {
         //Debug.Log("AddCornerNeighbour dla " + c1 + "," + c2 + "t1, t2: " + t1 + "," + t2);
         int n1 = FindTriangleIndex(c1, c2, notIndex, triangles);
-        Debug.Log("N!: " + n1);
+        //Debug.Log("N!: " + n1);
         
         if(n1 != -1)
         {
             int n2 = FindNeighbour(n1);
-            Debug.Log("AddCornerNeighbour: " + n1 + "," + n2);
+            //Debug.Log("AddCornerNeighbour: " + n1 + "," + n2);
             list.Add(n1);
             list.Add(n2);
         }
@@ -195,7 +183,7 @@ public class BreakableMesh : MonoBehaviour, IHitable
         Vector3 p2 = verticies[triangles[triangleIndex * 3 + 1]];
         Vector3 p3 = verticies[triangles[triangleIndex * 3 + 2]];
 
-        Debug.Log("Find Neighbour indexy vertexow: " + triangles[triangleIndex * 3] + "," + triangles[triangleIndex * 3 + 1] + "," + triangles[triangleIndex * 3 + 2]);
+        //Debug.Log("Find Neighbour indexy vertexow: " + triangles[triangleIndex * 3] + "," + triangles[triangleIndex * 3 + 1] + "," + triangles[triangleIndex * 3 + 2]);
 
         float d1 = Vector3.Distance(p1, p2);
         float d2 = Vector3.Distance(p1, p3);
@@ -217,7 +205,7 @@ public class BreakableMesh : MonoBehaviour, IHitable
             v1 = triangles[triangleIndex * 3 + 1];
             v2 = triangles[triangleIndex * 3 + 2];
         }
-        Debug.Log("Find neighbour shared: " + v1 + "," + v2);
+        //Debug.Log("Find neighbour shared: " + v1 + "," + v2);
         return FindTriangleIndex(v1, v2, new List<int> { triangleIndex });
     }
 
@@ -244,7 +232,7 @@ public class BreakableMesh : MonoBehaviour, IHitable
 
                 if (three.Contains(v1) && three.Contains(v2))
                 {
-                    Debug.Log("Znalazlem neighbora id: " + (i / 3) + " z indeksami vertexow: " + triangles[i] + "," + triangles[i+1] + "," + triangles[i+2]);
+                  //  Debug.Log("Znalazlem neighbora id: " + (i / 3) + " z indeksami vertexow: " + triangles[i] + "," + triangles[i+1] + "," + triangles[i+2]);
                     return i / 3;
                 }
 
@@ -252,8 +240,8 @@ public class BreakableMesh : MonoBehaviour, IHitable
             }
             else
             {
-                Debug.Log("POMIJAM TROJKE: " + triangles[i] + "," + triangles[i + 1] + "," + triangles[i + 2]);
-                Debug.Log("Dla v1,v2: " + v1 + "," + v2);
+                //Debug.Log("POMIJAM TROJKE: " + triangles[i] + "," + triangles[i + 1] + "," + triangles[i + 2]);
+                //Debug.Log("Dla v1,v2: " + v1 + "," + v2);
                 //Debug.Log("NotIndex: " + notIndex + "," + notIndex2);
             }
             i += 3;
@@ -277,8 +265,8 @@ public class BreakableMesh : MonoBehaviour, IHitable
         {
             if ( indexes.Contains(i/3))
             {
-                Debug.Log("Wywalam triangle i: " + i);
-                Debug.Log("Indeksy vertexow: " + triangles[i] + "," + triangles[i + 1] + "," + triangles[i + 2]);
+                //Debug.Log("Wywalam triangle i: " + i);
+                //Debug.Log("Indeksy vertexow: " + triangles[i] + "," + triangles[i + 1] + "," + triangles[i + 2]);
                 i += 3;
             }
             else

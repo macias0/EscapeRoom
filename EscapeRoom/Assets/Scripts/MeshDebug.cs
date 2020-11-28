@@ -25,8 +25,8 @@ public class MeshDebug : MonoBehaviour
         foreach(var t in mesh.triangles)
         {
             //int count = vertices.Where(x => x == vertices[t]).Count();
-           // Debug.Log("COUNT: " + count);
-            //Handles.color = Color.white;
+            // Debug.Log("COUNT: " + count);
+            Handles.color = Color.white;
             if (!visited[t] )
             {
                 
@@ -53,11 +53,11 @@ public class MeshDebug : MonoBehaviour
             i++;
         }
 
-        //foreach(KeyValuePair<Vector3, string> entry in labels)
-        //{
-        //    Handles.Label(entry.Key, entry.Value);
-        //}
-        //Debug.Log("KONIEC");
+        foreach (KeyValuePair<Vector3, string> entry in labels)
+        {
+            Handles.Label(entry.Key, entry.Value);
+        }
+        Debug.Log("KONIEC");
     }
 
     // Update is called once per frame

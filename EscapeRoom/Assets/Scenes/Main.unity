@@ -13139,11 +13139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04fbb25056cc9b498fe635b9e0213a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   jumpSpeed: 6
   gravity: 20
-  speedH: 2
-  speedV: 2
+  speedH: 1.5
+  speedV: 1.5
   freezed: 0
 --- !u!143 &775616891
 CharacterController:

@@ -14,7 +14,6 @@ public class InventoryController : MonoBehaviour
 {
 
 
-
     [SerializeField]
     private float pickUpDistance = 5.0f;
     private Inventory _inventory = new Inventory();
