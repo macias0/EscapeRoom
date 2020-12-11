@@ -46,7 +46,7 @@ public class BreakableMesh : MonoBehaviour, IHitable
             map[vertices[fi]] = fi;
         }
 
-            for (int i=0; i<triangles.Length; ++i)
+        for (int i=0; i<triangles.Length; ++i)
         {
             int index = triangles[i];
             int value;
@@ -87,7 +87,7 @@ public class BreakableMesh : MonoBehaviour, IHitable
 
     }
 
-    private List<int> FindCuboidIndexes(int index1, int index2)
+    private List<int> FindCuboidIndexes(int index1, int index2) //index1, index2 - front wall triangles indices
     {
         List<int> result = new List<int> { index1, index2 };
 
@@ -95,14 +95,14 @@ public class BreakableMesh : MonoBehaviour, IHitable
         Vector3[] verticies = mesh.vertices;
 
         //get all points to discard diagonal and find out which points are corners
-        List<int> corners = GetVertexIndexes(result);
+        List<int> corners = GetVertexIndexes(result); 
 
         //foreach (var x in corners)
         //{
         //    Debug.Log("CORNERS: " + x);
         //}
 
-        corners = corners.Distinct().ToList();
+        corners = corners.Distinct().ToList(); // indices of front wall
 
         //indexesToDraw = corners;
 
