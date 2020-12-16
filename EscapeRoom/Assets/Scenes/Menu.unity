@@ -235,7 +235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -13.2}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -312, y: -145}
+  m_AnchoredPosition: {x: -395, y: -198}
   m_SizeDelta: {x: 109, y: 156.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &200610936
@@ -567,8 +567,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -291}
-  m_SizeDelta: {x: 867.1, y: 101.70001}
+  m_AnchoredPosition: {x: 2.7999878, y: -291}
+  m_SizeDelta: {x: 996, y: 101.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395586514
 MonoBehaviour:
@@ -603,7 +603,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Opiekun pracy: dr hab inz Mariusz Borawski
+  m_Text: 'Opiekun pracy: dr hab. inz. Dariusz Frejlichowski, prof. ZUT
 
 
     Autor: Maciej Gurgul'
@@ -649,11 +649,11 @@ RectTransform:
   m_Father: {fileID: 467679831}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -413, y: -236}
-  m_SizeDelta: {x: 95.6, y: 43.6}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 36, y: 15}
+  m_SizeDelta: {x: 95.600006, y: 43.600006}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &395740239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,10 +914,10 @@ RectTransform:
   m_Father: {fileID: 669423509}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000012219, y: 0.000012398}
-  m_SizeDelta: {x: 1212.4, y: 530}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &467679832
 MonoBehaviour:
@@ -1617,8 +1617,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -162}
-  m_SizeDelta: {x: 867.1, y: 101.70001}
+  m_AnchoredPosition: {x: 2.7999878, y: -162}
+  m_SizeDelta: {x: 996, y: 101.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1127077475
 MonoBehaviour:
@@ -1829,8 +1829,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2316.5}
-  m_SizeDelta: {x: 867.1, y: 3623}
+  m_AnchoredPosition: {x: 2.7999878, y: -2316.5}
+  m_SizeDelta: {x: 996, y: 3623}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1141723279
 MonoBehaviour:
@@ -1866,8 +1866,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "- Unity 2019.1.5f1\n https://unity3d.com/get-unity/download\n\n- Sketchfab
-    for Unity https://assetstore.unity.com/packages/tools/input-management/sketchfab-for-unity-14302\n\nBrushstroke
-    Horror font\n\nOBIEKTY 3D\n\n- Blacksmith's Forge https://assetstore.unity.com/packages/3d/environments/fantasy/blacksmith-s-forge-17785\n\n-
+    for Unity https://assetstore.unity.com/packages/tools/input-management/sketchfab-for-unity-14302\n\n-
+    Brushstroke Horror font\n\nOBIEKTY 3D\n\n- Blacksmith's Forge https://assetstore.unity.com/packages/3d/environments/fantasy/blacksmith-s-forge-17785\n\n-
     Flashlight PRO https://assetstore.unity.com/packages/3d/props/tools/flashlight-pro-53053\n\n-
     Low Poly Props Pack https://assetstore.unity.com/packages/3d/props/industrial/low-poly-props-pack-53751\n\n-
     Clipboard https://assetstore.unity.com/packages/3d/props/clipboard-137662\n\n-
@@ -2030,7 +2030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 152.2}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 326, y: -164}
+  m_AnchoredPosition: {x: 409, y: -185}
   m_SizeDelta: {x: 109, y: 156.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1200572723
@@ -2615,7 +2615,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: -53.4}
+  m_SizeDelta: {x: -17, y: -72.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1529078041
 MonoBehaviour:
@@ -3337,7 +3337,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892196098}
   m_LocalRotation: {x: -0.15128596, y: 0.42556542, z: -0.29884708, w: 0.8406528}
-  m_LocalPosition: {x: 0, y: 0, z: -56}
+  m_LocalPosition: {x: 0, y: 0, z: -122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 825617648}
@@ -3345,7 +3345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 53.7, z: -39.14}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 411, y: 154}
+  m_AnchoredPosition: {x: 460, y: 163}
   m_SizeDelta: {x: 88.1, y: 146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1892196100

@@ -26,7 +26,7 @@ public class MeshDebug : MonoBehaviour
         {
             //int count = vertices.Where(x => x == vertices[t]).Count();
             // Debug.Log("COUNT: " + count);
-            Handles.color = Color.white;
+            //Handles.color = Color.white;
             if (!visited[t] )
             {
                 
@@ -53,10 +53,10 @@ public class MeshDebug : MonoBehaviour
             i++;
         }
 
-        foreach (KeyValuePair<Vector3, string> entry in labels)
-        {
-            Handles.Label(entry.Key, entry.Value);
-        }
+        //foreach (KeyValuePair<Vector3, string> entry in labels)
+        //{
+        //    Handles.Label(entry.Key, entry.Value);
+        //}
         Debug.Log("KONIEC");
     }
 
